@@ -23,7 +23,7 @@ class Board extends React.Component {
     })
   }
 
-  ComponentDidMount() {
+  componentDidMount() {
     this.buildGrid(50);
   }
 
