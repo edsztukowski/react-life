@@ -29,3 +29,11 @@
   background: #333;
   border: 3px solid #ccc
 }
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  margin: 1em;
+}
