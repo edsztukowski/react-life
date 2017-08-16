@@ -1,41 +1,36 @@
 var React = require('react');
-var Cell = require('./Cell')
 
 class Board extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      size: 3,
+      rows: 50,
       grid: [],
       generation: null
     }
-    this.renderCells = this.renderCells.bind(this)
+    this.buildGrid = this.buildGrid.bind(this)
   }
 
-  ComponentDidMount() {
-    this.renderCells(this.state.size);
-  }
-
-  renderCells(size) {
-    for (var i = 0; i < size; i++) {
-      for (var k = 0; k < size; k++) {
-        this.state.grid.push({Cell});
-      }
+  buildGrid(rows) {
+    var newGrid = []
+    for (var i = 0; i < rows; i++) {
+      newGrid[i] = []
     }
+    this.setState(function() {
+      return {
+        grid: newGrid
+      }
+    })
+  }
+
+  componentDidMount() {
+    this.buildGrid(50);
   }
 
   render() {
-    this.renderCells(this.state.size);
-    var grid = this.state.grid
     return(
       <div>
-      <ul>
-        {grid.map(function(curr, index) {
-          return(
-            <li key={index}>{<Cell />}</li>
-          )
-        })}
-        </ul>
+        {this.state.grid}
       </div>
     )
   }
