@@ -34,7 +34,7 @@ class Board extends React.Component {
   countEm(grid) {
     var count = 0;
     for (var i = 1; i < grid.length; i++) {
-      for (var j = 1; i < grid[i].length; j++) {
+      for (var j = 1; j < grid[i].length; j++) {
         count += grid[i-1][j-1];
         count += grid[i-1][j];
         count += grid[i-1][j+1];
