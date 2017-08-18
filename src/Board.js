@@ -33,8 +33,8 @@ class Board extends React.Component {
 
   countEm(grid) {
     var count = 0;
-    for (var i = 1; i < grid.length; i++) {
-      for (var j = 1; i < grid[i].length; j++) {
+    for (var i = 1; i < grid.length-1; i++) {
+      for (var j = 1; j < grid[i].length-1; j++) {
         count += grid[i-1][j-1];
         count += grid[i-1][j];
         count += grid[i-1][j+1];
@@ -43,7 +43,10 @@ class Board extends React.Component {
         count += grid[i+1][j-1];
         count += grid[i+1][j];
         count += grid[i][j+1];
-        console.log(count);
+
+        //Should we add up total of count here and then adjust grid[i][j]?
+        //We need to rerender everything at once I think
+
       }
 
     }
