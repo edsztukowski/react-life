@@ -47,7 +47,7 @@ class Board extends React.Component {
         //Should we add up total of count here and then adjust grid[i][j]?
         //We need to rerender everything at once I think
         //might need to refactor, hardest part might be done though
-
+        console.log(count)
       }
 
     }
