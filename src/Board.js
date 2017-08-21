@@ -61,9 +61,8 @@ class Board extends React.Component {
           grid: grid
         }
       })
-    }.bind(this), 3000);
+    }.bind(this), 500);
   }
-
   componentDidMount() {
     this.buildGrid(this.state.rows, this.state.cols);
   }
