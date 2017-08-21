@@ -56,7 +56,6 @@ class Board extends React.Component {
             }
           }
           count=0;
-
         }
       }
       generation++;
