@@ -31,5 +31,10 @@
 }
 
 .board-container {
-  width: 50px;
+  width: 1000px;
+  word-wrap: break-word;
+}
+
+.grid {
+  margin-top: 4em;
 }
