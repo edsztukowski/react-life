@@ -1,13 +1,14 @@
 var React = require('react');
+var Cells = require('./Cells');
 
 class Board extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      rows: 100,
-      cols: 500,
+      rows: 10,
+      cols: 10,
       grid: [],
-      generation: null
+      generation: 0
     }
     this.buildGrid = this.buildGrid.bind(this);
     this.countEm = this.countEm.bind(this);
@@ -32,6 +33,7 @@ class Board extends React.Component {
   }
 
   countEm(grid) {
+    var generation= this.state.generation;
     setInterval(function(){
       var count = 0;
       for (var i = 1; i < grid.length-1; i++) {
@@ -54,14 +56,17 @@ class Board extends React.Component {
             }
           }
           count=0;
+
         }
       }
+      generation++;
       this.setState(function() {
         return {
-          grid: grid
+          grid: grid,
+          generation: generation
         }
       })
-    }.bind(this), 500);
+    }.bind(this), 1000);
   }
 
   componentDidMount() {
@@ -72,7 +77,12 @@ class Board extends React.Component {
     return(
       <div className="board-container">
         {this.countEm(this.state.grid)}
-        {this.state.grid}
+        <div className="gen-count">
+        {this.state.generation}
+        </div>
+        <div className="grid">
+          {this.state.grid}
+        </div>
       </div>
     )
   }
