@@ -4,8 +4,8 @@ class Board extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      rows: 3,
-      cols: 40,
+      rows: 100,
+      cols: 500,
       grid: [],
       generation: null
     }
@@ -61,7 +61,7 @@ class Board extends React.Component {
           grid: grid
         }
       })
-    }.bind(this), 3000);
+    }.bind(this), 500);
   }
 
   componentDidMount() {
